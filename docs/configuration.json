@@ -1,15 +1,3 @@
-# HOUSE KEEPING
-
-Script for cleaning folders using strategies:
-
-* Maximum number of files in folder
-* Maximum occupied space in folder
-* Maximum age of files
-
-
-## Configuration
-
-``` json
 [
     {
         "folder": "./fakes/f1",
@@ -28,7 +16,7 @@ Script for cleaning folders using strategies:
             "max_folder_size": 1024000,
             "max_file_age": "1d"
         },
-        "action": "move",
+        "action": "delete",
         "action_destiny": "./fakes/bkp"
     },
     {
@@ -42,5 +30,3 @@ Script for cleaning folders using strategies:
         "action_destiny": "./fakes/bkp"
     }
 ]
-```
-python2 house_keep.py CONFIGURATION_FILE.JSON
