@@ -48,3 +48,7 @@ Script for cleaning folders using strategies:
 ]
 ```
 python2 house_keep.py CONFIGURATION_FILE.JSON
+
+## TESTING
+
+* Change time of files [link](https://askubuntu.com/questions/62492/how-can-i-change-the-date-modified-created-of-a-file)
