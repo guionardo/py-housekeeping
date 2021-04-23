@@ -7,6 +7,7 @@ import sys
 from configuration import Configuration
 from house_keeper import HouseKeeper
 from logger import setup_logging
+from exceptions import FileNotFoundError
 
 setup_logging()
 

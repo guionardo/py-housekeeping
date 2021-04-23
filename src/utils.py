@@ -1,5 +1,6 @@
 import logging
 import os
+from exceptions import FileNotFoundError
 
 LOG = logging.getLogger(__name__)
 

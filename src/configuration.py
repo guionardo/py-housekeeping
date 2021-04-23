@@ -4,6 +4,7 @@ import os
 import logging
 
 from folder_config import FolderConfig
+from exceptions import FileNotFoundError
 
 
 class Configuration:
