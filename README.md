@@ -4,6 +4,9 @@
 
 [![codecov](https://codecov.io/gh/guionardo/py-housekeeping/branch/develop/graph/badge.svg?token=v7s2bwquXk)](https://codecov.io/gh/guionardo/py-housekeeping)
 
+[![CodeQL](https://github.com/guionardo/py-housekeeping/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/guionardo/py-housekeeping/actions/workflows/codeql-analysis.yml)
+
+
 Script for cleaning folders using strategies:
 
 * Maximum number of files in folder
