@@ -42,7 +42,7 @@ def main():
                         json.dumps(Configuration.to_dict(), indent=2))
 
     finally:
-        singleton = None
+        del(singleton)
 
 
 if __name__ == '__main__':

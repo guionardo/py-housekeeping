@@ -1,5 +1,4 @@
 import unittest
-from sys import argv
 
 from src.house_keep import get_arguments
 

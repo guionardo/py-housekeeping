@@ -2,8 +2,10 @@ import os
 import logging
 import time
 
+
 class JustExitException(Exception):
     pass
+
 
 class Singleton:
 

@@ -11,11 +11,9 @@ class TestUtils(unittest.TestCase):
 
     def setUp(self):
         self.clear_dirs()
-        
 
     def tearDown(self):
         self.clear_dirs()
-        
 
     def clear_dirs(self):
         if os.path.isdir(self.TEST_FOLDER):
