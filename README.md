@@ -1,5 +1,7 @@
 # HOUSE KEEPING
 
+[![Python application](https://github.com/guionardo/py-housekeeping/actions/workflows/python-app.yml/badge.svg)](https://github.com/guionardo/py-housekeeping/actions/workflows/python-app.yml)
+
 Script for cleaning folders using strategies:
 
 * Maximum number of files in folder

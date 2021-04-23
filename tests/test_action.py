@@ -1,5 +1,11 @@
+# -*- coding: utf-8 -*-
 import unittest
 
+from src.action import Action
 
 class TestAction(unittest.TestCase):
-    pass
+
+    def test_invalid_action_config(self):
+        with self.assertRaises(ValueError):
+            action = Action({'action':'error'})
+            

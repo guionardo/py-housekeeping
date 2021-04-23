@@ -9,9 +9,13 @@ class TestUtils(unittest.TestCase):
 
     TEST_FOLDER = os.path.abspath('./test_folder')
 
-    def setUp(self) -> None:
+    def setUp(self):
         self.clear_dirs()
-        return super().setUp()
+        
+
+    def tearDown(self):
+        self.clear_dirs()
+        
 
     def clear_dirs(self):
         if os.path.isdir(self.TEST_FOLDER):
