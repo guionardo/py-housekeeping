@@ -2,6 +2,8 @@
 
 [![Python application](https://github.com/guionardo/py-housekeeping/actions/workflows/python-app.yml/badge.svg)](https://github.com/guionardo/py-housekeeping/actions/workflows/python-app.yml)
 
+[![codecov](https://codecov.io/gh/guionardo/py-housekeeping/branch/master/graph/badge.svg?token=v7s2bwquXk)](https://codecov.io/gh/guionardo/py-housekeeping)
+
 Script for cleaning folders using strategies:
 
 * Maximum number of files in folder
