@@ -1,6 +1,9 @@
 import logging
 import os
+import shutil
+
 from exceptions import FileNotFoundError
+
 
 LOG = logging.getLogger(__name__)
 
@@ -18,3 +21,8 @@ def make_dirs(path):
         LOG.error('Failed to create directory: %s', path)
     except OSError as exc:
         LOG.error('Exception when creating directory: %s - %s', path, exc)
+
+
+def remove_dir(path):
+    if os.path.isdir(path):
+        shutil.rmtree(path)

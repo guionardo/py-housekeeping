@@ -1,0 +1,32 @@
+[
+    {
+        "folder": "./fakes/f1",
+        "rules": {
+            "max_file_count": 100,
+            "max_folder_size": 1024000,
+            "max_file_age": "1m"
+        },
+        "action": "delete",
+        "action_destiny": "./bkp"
+    },
+    {
+        "folder": "./fakes/f2",
+        "rules": {
+            "max_file_count": 100,
+            "max_folder_size": 1024000,
+            "max_file_age": "1d"
+        },
+        "action": "delete",
+        "action_destiny": "./fakes/bkp"
+    },
+    {
+        "folder": "./fakes/f3",
+        "rules": {
+            "max_file_count": 100,
+            "max_folder_size": 1024000,
+            "max_file_age": "30s"
+        },
+        "action": "compress",
+        "action_destiny": "./fakes/bkp"
+    }
+]
