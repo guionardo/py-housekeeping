@@ -1,6 +1,6 @@
-import unittest
 import os
 import shutil
+import unittest
 
 from src.utils import make_dirs
 
