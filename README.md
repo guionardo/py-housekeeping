@@ -78,6 +78,7 @@ python house_keep.py --folder VALUE --max-age VALUE --max-size VALUE --max-count
         "action_destiny": "./fakes/bkp"
     }
 ]
+```
 
 
 ## TESTING
