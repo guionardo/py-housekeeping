@@ -3,8 +3,7 @@ import logging
 import time
 
 
-class JustExitException(Exception):
-    pass
+from exceptions import JustExitException
 
 
 class Singleton:
@@ -22,8 +21,8 @@ class Singleton:
                     if time.time()-create_time < self.MINIMUM_INTERVAL:
                         self.control_file = ''
                         raise JustExitException('Control file detected, created in {0}. Can run after {1}'.format(
-                                        self.fmt_time(create_time),
-                                        self.fmt_time(create_time+self.MINIMUM_INTERVAL)))
+                            self.fmt_time(create_time),
+                            self.fmt_time(create_time+self.MINIMUM_INTERVAL)))
             except OSError as exc:
                 self.LOG.error('Reading control file error: %s', exc)
                 raise

@@ -4,34 +4,29 @@ import logging
 import os
 import sys
 
-from configuration import Configuration
-from house_keeper import HouseKeeper
-from logger import setup_logging
-from exceptions import FileNotFoundError
+from src.configuration import Configuration
+from src.house_keeper import HouseKeeper
+from src.logger import setup_logging
+from src.exceptions import FileNotFoundError, JustExitException
+from src.cli import get_arguments
 
 setup_logging()
-
 
 LOGGER = logging.getLogger(__name__)
 
 
-def get_arguments(args=sys.argv[1:]):
-    if not args:
-        raise TypeError("Usage: {0} SETUP_FILE".format(
-            os.path.basename(sys.argv[0])))
-
-    return args
-
-
-def main():
-    from singleton import JustExitException, Singleton
+def main(args=sys.argv[1:]):
+    from src.singleton import Singleton
     singleton = None
     try:
         singleton = Singleton('.')
-        arguments = get_arguments()
-        if not os.path.isfile(arguments[0]):
-            raise FileNotFoundError(arguments[0])
-        configuration = Configuration(arguments[0])
+
+        config_file, file_handler = get_arguments(args)
+
+        if not os.path.isfile(config_file):
+            raise FileNotFoundError(config_file)
+
+        configuration = Configuration(config_file)
         house_keeper = HouseKeeper(configuration)
         house_keeper.run()
     except JustExitException as exc:
@@ -43,7 +38,7 @@ def main():
                         json.dumps(Configuration.to_dict(), indent=2))
 
     finally:
-        del(singleton)
+        del singleton
 
 
 if __name__ == '__main__':
