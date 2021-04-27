@@ -1,6 +1,7 @@
 import unittest
 from datetime import timedelta
-from src.file_age import parse_file_age, is_aged_file
+
+from src.file_age import is_aged_file, parse_file_age
 
 
 class TestFileAge(unittest.TestCase):

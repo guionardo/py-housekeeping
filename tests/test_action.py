@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-import unittest
 import os
+import unittest
 
 from src.action import Action
+
 from utils import remove_dir
 
 

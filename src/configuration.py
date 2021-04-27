@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import json
-import os
 import logging
+import os
 
-from folder_config import FolderConfig
 from exceptions import FileNotFoundError
+from folder_config import FolderConfig
 
 
 class Configuration:

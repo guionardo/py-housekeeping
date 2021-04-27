@@ -4,7 +4,6 @@ import shutil
 
 from exceptions import FileNotFoundError
 
-
 LOG = logging.getLogger(__name__)
 
 

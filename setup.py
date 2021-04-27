@@ -1,13 +1,14 @@
 import codecs
 import os
-import sys
 
-from setuptools import find_packages,setup
+from setuptools import find_packages, setup
+
 
 def read(rel_path):
     here = os.path.abspath(os.path.dirname(__file__))
     with codecs.open(os.path.join(here, rel_path), 'r') as fp:
         return fp.read()
+
 
 def get_definitions(rel_path, *words):
     dwords = {word: None for word in words}
@@ -46,7 +47,7 @@ setup(
         "Topic :: Software Development :: Build Tools",
         "Topic :: Utilities",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7"        
+        "Programming Language :: Python :: 2.7"
     ],
     url='https://github.com/guionardo/py-housekeeping/blob/develop/README.md',
     keywords='CHANGE_THIS',

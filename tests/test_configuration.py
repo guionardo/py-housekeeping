@@ -1,7 +1,7 @@
 import unittest
 
-from src.exceptions import FileNotFoundError
 from src.configuration import Configuration
+from src.exceptions import FileNotFoundError
 from src.utils import make_dirs, remove_dir
 
 

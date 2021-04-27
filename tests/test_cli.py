@@ -1,7 +1,9 @@
-import unittest, os
-from src.cli import get_arguments, ParsedArguments, ArgumentOption
-from src.exceptions import JustExitException
 import logging
+import os
+import unittest
+
+from src.cli import ArgumentOption, ParsedArguments, get_arguments
+from src.exceptions import JustExitException
 
 
 class TestCli(unittest.TestCase):
@@ -17,12 +19,6 @@ class TestCli(unittest.TestCase):
         with self.assertRaises(JustExitException):
             get_arguments([])
 
-    def test_parse_arguments(self):
-        args = ParsedArguments(
-            [ArgumentOption('test')],
-            ['--test', 'file.json'])
-        self.assertEqual('file.json', args.test)
-
     def test_argument_option_valid(self):
         option = ArgumentOption('test', 'Test argument', True)
         self.assertIsInstance(option, ArgumentOption)
@@ -37,7 +33,8 @@ class TestCli(unittest.TestCase):
         print(parsed.show_help())
 
     def test_cli(self):
-        (filename, handler) = get_arguments(['--folder', './fakes', '--max-count', '10', '--action', 'delete'])
+        (filename, handler) = get_arguments(
+            ['--folder', './fakes', '--max-count', '10', '--action', 'delete'])
         self.assertTrue(os.path.isfile(filename))
         del handler
         self.assertFalse(os.path.isfile(filename))

@@ -2,11 +2,12 @@
 
 # With configuration file: Just
 """
-import sys
 import json
 import logging
-from exceptions import JustExitException
+import sys
 import tempfile
+
+from exceptions import JustExitException
 
 
 def get_arguments(args=sys.argv[1:]):
@@ -27,16 +28,6 @@ def get_arguments(args=sys.argv[1:]):
         ArgumentOption(
             'destiny', 'Action destiny folder', default=None)
     ], args)
-
-    # "folder": "./fakes/f1",
-    # "rules": {
-    #     "max_file_count": 100,
-    #     "max_folder_size": 1024000,
-    #     "max_file_age": "1m"
-    # },
-    # "action": "delete",
-    # "action_destiny": "./bkp"
-    # parsed_args = parse_arguments(args)
 
     if parsed_args.config_file:
         return parsed_args.config_file, None
@@ -61,7 +52,8 @@ def get_arguments(args=sys.argv[1:]):
 
 
 class ArgumentOption:
-    _slots_ = ['name', 'description', 'optional', 'value', 'set', 'default', 'default_option']
+    _slots_ = ['name', 'description', 'optional',
+               'value', 'set', 'default', 'default_option']
 
     def __init__(self, name, description=None, optional=True, default=True, default_option=False):
         self.name = name
@@ -97,17 +89,7 @@ class ParsedArguments:
         """
         self._options = {option.name: option for option in options}
         key = None
-        value = None
-        opts = {}
-        for arg in args:
-            if arg.startswith('--'):  # key
-                key = arg[2:]
-                opts[key] = opts.get(key, True)
-            elif key:  # value for key
-                opts[key] = arg
-                key = None
-            else:  # value without key
-                raise ValueError("Argument without previous key", value)
+        opts = self.get_opts(args)
 
         unknown_options = []
         for key in opts.keys():
@@ -137,6 +119,20 @@ class ParsedArguments:
         if options_count == 0:
             default_option.value = True
 
+    def _get_opts(self, args):
+        opts = {}
+        key = None
+        for arg in args:
+            if arg.startswith('--'):  # key
+                key = arg[2:]
+                opts[key] = opts.get(key, True)
+            elif key:  # value for key
+                opts[key] = arg
+                key = None
+            else:  # value without key
+                raise ValueError("Argument without previous key", arg)
+        return opts
+
     def __getattr__(self, name):
         if name in self._options.keys():
             return self._options[name].value
@@ -153,26 +149,3 @@ class ParsedArguments:
             for option in self._options:
                 help.append(str(self._options[option]))
         return help
-
-
-def parse_arguments(args=sys.argv[1:]):
-    key = None
-    value = None
-    parsed = {'_': []}
-    for arg in args:
-        if arg.startswith('--'):
-            if key:
-                parsed[key] = True
-            key = arg[2:]
-        else:
-            value = arg
-        if not value:
-            continue
-        if key:
-            parsed[key] = value
-            key = None
-        else:
-            parsed['_'].append(value)
-        value = None
-
-    return parsed

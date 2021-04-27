@@ -1,7 +1,6 @@
-import os
 import logging
+import os
 import time
-
 
 from exceptions import JustExitException
 

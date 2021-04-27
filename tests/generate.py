@@ -1,8 +1,8 @@
 import datetime
 import os
 import random
-import uuid
 import shutil
+import uuid
 
 
 def mkdir(folder):
@@ -49,7 +49,8 @@ def generate_aged(folder_name, count, age_in_minutes, percent_aged):
             f.write('0' * size)
         if (float(i+1) / float(count)) <= percent_aged:
             continue
-        new_age = (datetime.datetime.now() - datetime.timedelta(minutes=age_in_minutes)).strftime('%m%d%H%M')
+        new_age = (datetime.datetime.now() -
+                   datetime.timedelta(minutes=age_in_minutes)).strftime('%m%d%H%M')
         os.system('touch -c -t {0} {1}'.format(new_age, filename))
 
 # folders = ['./fakes/f1', './fakes/f2', './fakes/f3']

@@ -1,5 +1,7 @@
 import unittest
-from src.singleton import Singleton, JustExitException
+
+from src.exceptions import JustExitException
+from src.singleton import Singleton
 
 
 class TestSingleton(unittest.TestCase):
