@@ -1,0 +1,5 @@
+__tool_name__ = 'py-housekeeping-pkg-guiosoft'
+__version__ = '0.1.0'
+__description__ = 'Script for cleaning folders using strategies'
+__author__ = 'Guionardo Furlan'
+__author_email__ = 'guionardo@gmail.com'

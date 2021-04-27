@@ -16,7 +16,7 @@
             "max_folder_size": 1024000,
             "max_file_age": "1d"
         },
-        "action": "delete",
+        "action": "move",
         "action_destiny": "./fakes/bkp"
     },
     {
