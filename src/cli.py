@@ -89,7 +89,7 @@ class ParsedArguments:
         """
         self._options = {option.name: option for option in options}
         key = None
-        opts = self.get_opts(args)
+        opts = self._get_opts(args)
 
         unknown_options = []
         for key in opts.keys():

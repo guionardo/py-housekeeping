@@ -94,14 +94,14 @@ pytest --cov=src ./
 platform linux2 -- Python 2.7.18, pytest-4.6.11, py-1.10.0, pluggy-0.13.1
 rootdir: /home/guionardo/dev/github.com/guionardo/py-housekeeping
 plugins: cov-2.11.1
-collected 30 items                                                            
+collected 29 items                                                            
 
 tests/test_action.py ....                                               [ 13%]
-tests/test_cli.py ......                                                [ 33%]
-tests/test_configuration.py ...                                         [ 43%]
-tests/test_file_age.py .........                                        [ 73%]
-tests/test_main.py ...                                                  [ 83%]
-tests/test_rule.py ..                                                   [ 90%]
+tests/test_cli.py .....                                                 [ 31%]
+tests/test_configuration.py ...                                         [ 41%]
+tests/test_file_age.py .........                                        [ 72%]
+tests/test_main.py ...                                                  [ 82%]
+tests/test_rule.py ..                                                   [ 89%]
 tests/test_singleton.py ..                                              [ 96%]
 tests/test_utils.py .                                                   [100%]
 
@@ -110,7 +110,7 @@ Name                   Stmts   Miss  Cover
 ------------------------------------------
 src/__init__.py            5      0   100%
 src/action.py             22      0   100%
-src/cli.py               103     25    76%
+src/cli.py                88      8    91%
 src/configuration.py      22      0   100%
 src/exceptions.py          6      0   100%
 src/file_age.py           24      0   100%
@@ -122,8 +122,8 @@ src/rule.py               24      0   100%
 src/singleton.py          32      2    94%
 src/utils.py              21      6    71%
 ------------------------------------------
-TOTAL                    418     64    85%
+TOTAL                    403     47    88%
 
 
-========================== 30 passed in 1.43 seconds ==========================
+========================== 29 passed in 1.71 seconds ==========================
 ```
